@@ -19,7 +19,7 @@ class Configuration implements ConfigurationInterface
     public function __construct($enabled, $host, $port, $clientId = '')
     {
         $this->host = $host;
-        $this->port = filter_var($port, FILTER_VALIDATE_INT);
+        $this->port = $port;
         if ($this->port === false) {
             throw new \InvalidArgumentException(
                 "CSM 'port' value must be an integer!");
